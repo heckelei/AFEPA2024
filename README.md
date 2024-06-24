@@ -9,12 +9,13 @@ Structure and course material
 
 ### Links to Intro material and pre-course instructions
 <!--- this is how we can comment things out...here examples from another course on how to link github files and external sites
-- [Intro slides](https://docs.google.com/presentation/d/1y5iono-CsO2mPmB-yU7PqYTYPmlMHBLME5afiJw-1Ls/edit?usp=sharing)
+--->
+- [Storm, Heckelei, Baylis 2024](...)
 - [Intro jupyter notebook](https://github.com/agpo-ilr-uni-bonn/PromotionskollegModule6800_2021/blob/main/labIntro.ipynb)
---->
+  
 ### Links to Day 1 material (July 22)
-<!---
 
---->
+- [Intro slides](https://docs.google.com/presentation/d/1m78B0lSyZFZ5Up2ssi_RcxVYxjOzHLCq8CnIROTIEEU/edit?usp=sharing)
+
 ### Links to Day 2 material (July 23)
 ### Links to Day 3 material (July 24) 
