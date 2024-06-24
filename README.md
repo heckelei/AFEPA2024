@@ -11,8 +11,9 @@ Structure and course material
 <!--- this is how we can comment things out...here examples from another course on how to link github files and external sites
 --->
 - [Storm, Heckelei, Baylis 2024](...)
+<!--- this is how we can comment things out...here examples from another course on how to link github files and external sites
 - [Intro jupyter notebook](https://github.com/agpo-ilr-uni-bonn/PromotionskollegModule6800_2021/blob/main/labIntro.ipynb)
-  
+---> 
 ### Links to Day 1 material (July 22)
 
 - [Intro slides](https://docs.google.com/presentation/d/1m78B0lSyZFZ5Up2ssi_RcxVYxjOzHLCq8CnIROTIEEU/edit?usp=sharing)
