@@ -3,7 +3,8 @@
 ## July 25 to 26: Oxford Style Debate on policy topics
 Structure and course material
 ### Instructors 
-[Thomas Heckelei - University of Bonn, Germany](https://www.ilr1.uni-bonn.de/en/research/research-groups/economic_and_agricultural-policy/prof)
+[Thomas Heckelei - University of Bonn, Germany](https://www.ilr1.uni-bonn.de/en/research/research-groups/economic_and_agricultural-policy/prof)  
+
 [Alessandro Varraca - Universita Cattolica del Sacro Cuore (UCSC), Italy](https://docenti.unicatt.it/ppd2/it/docenti/27208/alessandro-varacca/didattica) 
 
 ### Links to Intro material and pre-course instructions
