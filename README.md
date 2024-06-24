@@ -10,6 +10,8 @@ Structure and course material
 ### Links to Intro material and pre-course instructions
 <!--- this is how we can comment things out...here examples from another course on how to link github files and external sites
 --->
+- [instructions to install R and R-studio](https://rstudio-education.github.io/hopr/starting.html)
+- [Instructions to install RStan](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started)
 - [Storm, Heckelei, Baylis 2024](...)
 <!--- this is how we can comment things out...here examples from another course on how to link github files and external sites
 - [Intro jupyter notebook](https://github.com/agpo-ilr-uni-bonn/PromotionskollegModule6800_2021/blob/main/labIntro.ipynb)
