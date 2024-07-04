@@ -12,7 +12,7 @@ Structure and course material
 --->
 - [instructions to install R and R-studio](https://rstudio-education.github.io/hopr/starting.html)
 - [Instructions to install RStan](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started)
-- [Storm, Heckelei, Baylis 2024](https://academic.oup.com/erae/advance-article/doi/10.1093/erae/jbae016/7704545#469105649)
+- [Storm, Heckelei, Baylis 2024](https://doi.org/10.1093/erae/jbae016)
 <!--- this is how we can comment things out...here examples from another course on how to link github files and external sites
 - [Intro jupyter notebook](https://github.com/agpo-ilr-uni-bonn/PromotionskollegModule6800_2021/blob/main/labIntro.ipynb)
 ---> 
