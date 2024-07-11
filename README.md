@@ -19,6 +19,7 @@ Structure and course material
 ### Links to Day 1 material (July 22)
 
 - [Intro slides](https://docs.google.com/presentation/d/1m78B0lSyZFZ5Up2ssi_RcxVYxjOzHLCq8CnIROTIEEU/edit?usp=sharing)
+- [Linear regression case study](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_slides.pdf)
 
 ### Links to Day 2 material (July 23)
 ### Links to Day 3 material (July 24) 
