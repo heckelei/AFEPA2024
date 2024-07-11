@@ -4,9 +4,9 @@ setwd("your wd")
 source("aux_functions.R")
 
 library(rstan)
-library(HDInterval)
-library(bayesplot)
-library(ggplot2)
+library(tidybayes)
+library(tidyverse)
+library(boot)
 
 ### Load data
 #############
@@ -26,7 +26,7 @@ load("data_logistic_regression.RData")
 par(mfrow=c(2,2), pty="s")
 for (j in c(1, 1.5, 2.5, 10)) {
   
-  hist(boot::inv.logit(rnorm(1000, 0, j)),
+  hist(inv.logit(rnorm(1000, 0, j)),
        main = paste0("a ~ N(0, ", j, ")"),
        xlab = "probability")
   abline(v = 0.5, col = "red", lty = 2)
@@ -61,8 +61,31 @@ prior_sample <- sampling(logi_reg_prior,
                          algorithm = "Fixed_param")
 
 prior_sample_fit <- extract(prior_sample)
+prior_sample_fit_pi <- prior_sample %>% spread_draws(prob[condition])
 
-plot_prior_point(prior_sample_fit$prob, xlab = "i", ylab = "Probability")
+prior_sample_fit_pi %>%
+  ggplot(aes(x = condition, y = prob)) +
+  geom_hex(bins = 50) +
+  scale_fill_gradient(low = "white", high = "black") +
+  theme_bw() + 
+  labs(x = "individual",
+       y = "Probability") +
+  theme(aspect.ratio = 1,
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.grid = element_blank())
+
+i <- sample(1:200)[1]
+
+prior_sample_fit_pi %>%
+  filter(condition==i) %>%
+  ggplot(aes(x = prob)) +
+  geom_histogram(bins = 50) +
+  theme_bw() +
+  labs(x = "Probability",
+       title = paste0("Simulated pi for individual i = ", i)) +
+  theme(aspect.ratio = 1,
+        panel.grid = element_blank())
 
 # Start with beta1=beta2 ~ N(0,5)
 
@@ -74,23 +97,46 @@ prior_sample <- sampling(logi_reg_prior,
                          algorithm = "Fixed_param")
 
 prior_sample_fit <- extract(prior_sample)
+prior_sample_fit_pi <- prior_sample %>% spread_draws(prob[condition])
 
-plot_prior_point(prior_sample_fit$prob, xlab = "i", ylab = "Probability")
+prior_sample_fit_pi %>%
+  ggplot(aes(x = condition, y = prob)) +
+  geom_hex(bins = 50) +
+  scale_fill_gradient(low = "white", high = "black") +
+  theme_bw() + 
+  labs(x = "individual",
+       y = "Probability") +
+  theme(aspect.ratio = 1,
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.grid = element_blank())
+
+i <- sample(1:200)[1]
+
+prior_sample_fit_pi %>%
+  filter(condition==i) %>%
+  ggplot(aes(x = prob)) +
+  geom_histogram(bins = 50) +
+  theme_bw() +
+  labs(x = "Probability",
+       title = paste0("Simulated pi for individual i = ", i)) +
+  theme(aspect.ratio = 1,
+        panel.grid = element_blank())
 
 # what prior for 'slopes'? can we use intuition to define what weakly informative is?
 
 par(mfrow=c(1,3), pty="s")
-hist(boot::inv.logit(x1*rnorm(1000, 0,  5)), xlab = "probability", main = "beta1 ~ N(0,5)")
-hist(boot::inv.logit(x1*rnorm(1000, 0,  1)), xlab = "probability", main = "beta1 ~ N(0,1)")
-hist(boot::inv.logit(x1*rnorm(1000, 0, .5)), xlab = "probability", main = "beta1 ~ N(0,0.5)")
+hist(inv.logit(x1*rnorm(1000, 0,  5)), xlab = "probability", main = "beta1 ~ N(0,5)")
+hist(inv.logit(x1*rnorm(1000, 0,  1)), xlab = "probability", main = "beta1 ~ N(0,1)")
+hist(inv.logit(x1*rnorm(1000, 0, .5)), xlab = "probability", main = "beta1 ~ N(0,0.5)")
 par(mfrow=c(1,1), pty="m")
 
 # what if we use the same priors with larger covariate values?
 
 par(mfrow=c(1,3), pty="s")
-hist(boot::inv.logit(x1 * rnorm(1000, 0, 1)), xlab = "probability", main = "x1; beta1 ~ N(0,1)")
-hist(boot::inv.logit(x1*2*rnorm(1000, 0, 1)), xlab = "probability", main = "2*x1; beta1 ~ N(0,1)")
-hist(boot::inv.logit(x1*4*rnorm(1000, 0, 1)), xlab = "probability", main = "4*x1; beta1 ~ N(0,1)")
+hist(inv.logit(x1 * rnorm(1000, 0, 1)), xlab = "probability", main = "x1; beta1 ~ N(0,1)")
+hist(inv.logit(x1*2*rnorm(1000, 0, 1)), xlab = "probability", main = "2*x1; beta1 ~ N(0,1)")
+hist(inv.logit(x1*4*rnorm(1000, 0, 1)), xlab = "probability", main = "4*x1; beta1 ~ N(0,1)")
 par(mfrow=c(1,1), pty="m")
 
 # for unambiguous prior setting, muse scale covariates!
@@ -98,23 +144,23 @@ par(mfrow=c(1,1), pty="m")
 x1sc <- as.vector(scale(x1)*0.5)
 
 par(mfrow=c(1,3), pty="s")
-hist(boot::inv.logit(x1sc*rnorm(1000, 0,  5)), xlab = "probability", main = "scaled, beta1 ~ N(0,5)")
-hist(boot::inv.logit(x1sc*rnorm(1000, 0,  1)), xlab = "probability", main = "scaled, beta1 ~ N(0,1)")
-hist(boot::inv.logit(x1sc*rnorm(1000, 0, .5)), xlab = "probability", main = "scaled, beta1 ~ N(0,0.5)")
+hist(inv.logit(x1sc*rnorm(1000, 0,  5)), xlab = "probability", main = "scaled, beta1 ~ N(0,5)")
+hist(inv.logit(x1sc*rnorm(1000, 0,  1)), xlab = "probability", main = "scaled, beta1 ~ N(0,1)")
+hist(inv.logit(x1sc*rnorm(1000, 0, .5)), xlab = "probability", main = "scaled, beta1 ~ N(0,0.5)")
 par(mfrow=c(1,1), pty="m")
 
 x1sc_l <- as.vector(scale(x1*4)*0.5)
 
 par(mfrow=c(1,3), pty="s")
-hist(boot::inv.logit(x1sc_l*rnorm(1000, 0,  5)), xlab = "probability", main = "x1 scaled; beta1 ~ N(0,5)")
-hist(boot::inv.logit(x1sc_l*rnorm(1000, 0,  1)), xlab = "probability", main = "2*x1 scaled; beta1 ~ N(0,1)")
-hist(boot::inv.logit(x1sc_l*rnorm(1000, 0, .5)), xlab = "probability", main = "4*x1 scaled; beta1 ~ N(0,0.5)")
+hist(inv.logit(x1sc_l*rnorm(1000, 0,  5)), xlab = "probability", main = "x1 scaled; beta1 ~ N(0,5)")
+hist(inv.logit(x1sc_l*rnorm(1000, 0,  1)), xlab = "probability", main = "2*x1 scaled; beta1 ~ N(0,1)")
+hist(inv.logit(x1sc_l*rnorm(1000, 0, .5)), xlab = "probability", main = "4*x1 scaled; beta1 ~ N(0,0.5)")
 par(mfrow=c(1,1), pty="m")
 
 # a reasonable option is 1!
 
 par(pty="s")
-hist(boot::inv.logit(x1sc*rnorm(1000, 0, 1)), xlab = "probability", main = "x1 scaled; beta1 ~ N(0,1)")
+hist(inv.logit(x1sc*rnorm(1000, 0, 1)), xlab = "probability", main = "x1 scaled; beta1 ~ N(0,1)")
 par(pty="m")
 
 # the same holds for x2
@@ -122,8 +168,8 @@ par(pty="m")
 x2sc <- as.vector(scale(x2)*0.5)
 
 par(mfrow=c(1,2), pty="s")
-hist(boot::inv.logit(x1sc*rnorm(1000, 0, 1)), xlab = "probability", main = "x1 scaled; beta1 ~ N(0,1)")
-hist(boot::inv.logit(x2sc*rnorm(1000, 0, 1)), xlab = "probability", main = "x2 scaled; beta2 ~ N(0,1)")
+hist(inv.logit(x1sc*rnorm(1000, 0, 1)), xlab = "probability", main = "x1 scaled; beta1 ~ N(0,1)")
+hist(inv.logit(x2sc*rnorm(1000, 0, 1)), xlab = "probability", main = "x2 scaled; beta2 ~ N(0,1)")
 par(mfrow=c(1,1), pty="m")
 
 ### Now redefine the data list accordingly!
@@ -146,8 +192,31 @@ prior_sample <- sampling(logi_reg_prior,
                          algorithm = "Fixed_param")
 
 prior_sample_fit <- extract(prior_sample)
+prior_sample_fit_pi <- prior_sample %>% spread_draws(prob[condition])
 
-plot_prior_point(prior_sample_fit$prob, xlab = "i", ylab = "Probability")
+prior_sample_fit_pi %>%
+  ggplot(aes(x = condition, y = prob)) +
+  geom_hex(bins = 50) +
+  scale_fill_gradient(low = "white", high = "black") +
+  theme_bw() + 
+  labs(x = "individual",
+       y = "Probability") +
+  theme(aspect.ratio = 1,
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.grid = element_blank())
+
+i <- sample(1:200)[1]
+
+prior_sample_fit_pi %>%
+  filter(condition==i) %>%
+  ggplot(aes(x = prob)) +
+  geom_histogram(bins = 50) +
+  theme_bw() +
+  labs(x = "Probability",
+       title = paste0("Simulated pi for individual i = ", i)) +
+  theme(aspect.ratio = 1,
+        panel.grid = element_blank())
 
 # lesson: multiple variables nontrivially impact on the prior predictive distribution
 
@@ -166,6 +235,7 @@ fit <- sampling(logi_reg,
                 cores = 4)
 
 sample_fit <- extract(fit)
+sample_fit_pi <- fit %>% spread_draws(prob[condition])
 
 ### Visualize posteriors
 
@@ -208,13 +278,42 @@ rbind(quantile(alpha, c(.025, .975)),
 
 ### Posterior Predictive Distribution
 
-plot_prior_point(sample_fit$prob, xlab = "i", ylab = "Probability")
-points(colMeans(sample_fit$prob), col = "red", cex=.75)
+sample_fit_pi %>%
+  ggplot(aes(x = condition, y = prob)) +
+  geom_hex(bins = 50) +
+  geom_point(data = sample_fit_pi %>% 
+               group_by(condition) %>% 
+               summarise(m_prob = mean(prob)),
+             aes(x = condition, y = m_prob),
+             col = "red") +
+  scale_fill_gradient(low = "white", high = "black") +
+  theme_bw() +
+  labs(x = "individual",
+       y = "Probability") +
+  theme(aspect.ratio = 1,
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.grid = element_blank())
+
+i <- sample(1:200)[1]
+
+sample_fit_pi %>%
+  filter(condition==i) %>%
+  ggplot(aes(x = prob)) +
+  geom_histogram(bins = 50) +
+  theme_bw() +
+  labs(x = "Probability",
+       title = paste0("Simulated pi for individual i = ", i)) +
+  theme(aspect.ratio = 1,
+        panel.grid = element_blank())
 
 ccr <- numeric(length = nrow(sample_fit$y_pred))
 for(s in 1:nrow(sample_fit$y_pred)) {
   
-  ccr[s] <- sum(diag(table(sample_fit$y_pred[s,], y)))/sum(table(sample_fit$y_pred[s,], y))*100
+  conf_mat <- table(sample_fit$y_pred[s,], y)
+  corr_class <- diag(conf_mat)
+  
+  ccr[s] <- (sum(corr_class) / sum(conf_mat)) * 100
   
 }
 
