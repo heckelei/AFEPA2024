@@ -1,8 +1,10 @@
 
 library(tidyverse)
 library(rstan)
+library(plm)
+library(bayesplot)
 
-setwd("~/Library/CloudStorage/OneDrive-UniversitàCattolicadelSacroCuore/1_Lavoro_personale/2024/AFEPA_Summer_School")
+setwd("your wd")
 
 source("aux_functions.R")
 
@@ -85,10 +87,10 @@ par(mfrow=c(1,1), pty="m")
 
 dat_list$sd_beta <- 1
 
-fit_prior_re_sl_b <- sampling(chmb_prior_re_sl_b,
-                              data = dat_list,
-                              algorithm = "Fixed_param")
-fit_prior_smpl <- extract(fit_prior_re_sl_b)
+fit_prior <- sampling(chmb_prior,
+                      data = dat_list,
+                      algorithm = "Fixed_param")
+fit_prior_smpl <- extract(fit_prior)
 y_sim <- fit_prior_smpl$y
 
 par(mfrow=c(1,3), pty="s")
@@ -197,10 +199,13 @@ fit <- sampling(chmb,
 sample_fit <- extract(fit)
 beta <- sample_fit$beta
 
-fe_reg <- plm::plm(earn ~ cult_land + forest_land_sh + kw_machinery_ha + workers_ha,
-                   data = dat_tr %>% 
-                     mutate_at(vars(earn, cult_land, forest_land_sh, 
-                                    kw_machinery_ha, workers_ha), scale))
+fe_reg <- plm(earn ~ cult_land + 
+                forest_land_sh + 
+                kw_machinery_ha + 
+                workers_ha,
+              data = dat_tr %>% 
+                mutate_at(vars(earn, cult_land, forest_land_sh, 
+                               kw_machinery_ha, workers_ha), scale))
 
 t(round(apply(beta, 2, quantile, c(.025, .975)), 3))
 round(confint(fe_reg), 3)
@@ -215,8 +220,11 @@ sc_factor <- sd(dat$earn)/apply(X_unsc, 2, sd)
 
 beta_backsc <- sweep(beta, 2, sc_factor, "*")
 
-fe_reg_unsc <- plm::plm(earn ~ cult_land + forest_land_sh + kw_machinery_ha + 
-                          workers_ha, data = dat_tr)
+fe_reg_unsc <- plm(earn ~ cult_land + 
+                     forest_land_sh + 
+                     kw_machinery_ha + 
+                     workers_ha, data = dat_tr,
+                   index = c("id", "year"))
 
 t(round(apply(beta_backsc, 2, quantile, c(.025, .975)), 3))
 round(confint(fe_reg_unsc), 3)
@@ -258,8 +266,6 @@ par(mfrow=c(1,1), pty="m")
 
 ### Diagnostic
 ##############
-
-library(bayesplot)
 
 params <- c(paste0("beta[", 1:dat_list$K, "]"),
             paste0("gamma[", 1:dat_list$L, "]"),
