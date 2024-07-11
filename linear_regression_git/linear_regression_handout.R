@@ -4,9 +4,7 @@ setwd("your wd")
 source("aux_functions.R")
 
 library(rstan)
-library(HDInterval)
 library(truncnorm)
-library(bayesplot)
 
 ### Load data
 #############
@@ -26,14 +24,20 @@ lin_reg_prior <- stan_model("linear_regression_prior.stan")
 
 ### Variance: sigma
 
-# 1. Start with sigma ~ N+(0,1)
+std_dev <- rtruncnorm(1000, 0, Inf, 2)
+
+par(pty="s")
+hist(std_dev, main = "sigma", xlab = "draws")
+par(pty="s")
+
+# 1. Start with sigma ~ N+(0,2)
 
 set.seed(123)
 
 y_sim <- matrix(nrow=1000, ncol=200)
 for (s in 1:1000) {
   
-  std_dev <- rtruncnorm(1, 0, Inf, 1)
+  std_dev <- rtruncnorm(1, 0, Inf, 2)
   y_sim[s, ] <- rnorm(200, 0, std_dev)
   
 }
@@ -47,14 +51,14 @@ hist(apply(y_sim, 1, sd), main = "sd", xlab = "draws")
 abline(v=sd(y),col="green", lwd=2)
 par(mfrow=c(1,1), pty="m")
 
-# 2. Try with with sigma ~ N+(0,2.5)
+# 2. Try with with sigma ~ N+(0,3)
 
 set.seed(123)
 
 y_sim <- matrix(nrow=1000, ncol=200)
 for (s in 1:1000) {
   
-  std_dev <- rtruncnorm(1, 0, Inf, 2.5)
+  std_dev <- rtruncnorm(1, 0, Inf, 3)
   y_sim[s, ] <- rnorm(200, 0, std_dev)
   
 }
@@ -98,7 +102,7 @@ set.seed(123)
 y_sim <- matrix(nrow=1000, ncol=200)
 for (s in 1:1000) {
 
-  std_dev <- rtruncnorm(1, 0, Inf, 2.5)
+  std_dev <- rtruncnorm(1, 0, Inf, 3)
   mu <- rnorm(1, 0, 5)
   y_sim[s, ] <- rnorm(200, mu, std_dev)
   
@@ -120,7 +124,7 @@ set.seed(123)
 y_sim <- matrix(nrow=1000, ncol=200)
 for (s in 1:1000) {
   
-  std_dev <- rtruncnorm(1, 0, Inf, 2.5)
+  std_dev <- rtruncnorm(1, 0, Inf, 3)
   mu <- rnorm(1, 0, 10)
   y_sim[s, ] <- rnorm(200, mu, std_dev)
   
@@ -150,7 +154,7 @@ dat_list <- list(
   sigma_b2 = 5,
   mu_alpha = 0,
   sigma_alpha = 10,
-  lambda_sigma = 2.5
+  lambda_sigma = 3
 )
 
 prior_sample <- sampling(lin_reg_prior,
