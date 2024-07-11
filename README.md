@@ -22,4 +22,9 @@ Structure and course material
 - [Linear regression case study](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_slides.pdf)
 
 ### Links to Day 2 material (July 23)
+
+- [Logistic regression case study](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression_slides.pdf)
+
 ### Links to Day 3 material (July 24) 
+
+- [Panel data case study](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_slides.pdf)
