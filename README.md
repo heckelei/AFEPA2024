@@ -5,7 +5,7 @@ Structure and course material
 ### Instructors 
 [Thomas Heckelei - University of Bonn, Germany](https://www.ilr1.uni-bonn.de/en/research/research-groups/economic_and_agricultural-policy/prof)  
 
-[Alessandro Varraca - Universita Cattolica del Sacro Cuore (UCSC), Italy](https://docenti.unicatt.it/ppd2/it/docenti/27208/alessandro-varacca/didattica) 
+[Alessandro Varacca - Università Cattolica del Sacro Cuore (UCSC), Italy](https://docenti.unicatt.it/ppd2/it/docenti/27208/alessandro-varacca/didattica) 
 
 ### Links to Intro material and pre-course instructions
 <!--- this is how we can comment things out...here examples from another course on how to link github files and external sites
