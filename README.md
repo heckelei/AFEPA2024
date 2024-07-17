@@ -2,7 +2,7 @@
 ## July 22 to 24: Introduction to Probabilistic Programming: Concept and exemplary application;
 ## July 25 to 26: Oxford Style Debate on policy topics
 Structure and course material
-### Instructors 
+### Instructors (July 22 - 24)
 [Thomas Heckelei - University of Bonn, Germany](https://www.ilr1.uni-bonn.de/en/research/research-groups/economic_and_agricultural-policy/prof)  
 
 [Alessandro Varacca - Università Cattolica del Sacro Cuore (UCSC), Italy](https://docenti.unicatt.it/ppd2/it/docenti/27208/alessandro-varacca/didattica) 
