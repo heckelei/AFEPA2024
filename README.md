@@ -17,6 +17,7 @@ Structure and course material
 - [Intro jupyter notebook](https://github.com/agpo-ilr-uni-bonn/PromotionskollegModule6800_2021/blob/main/labIntro.ipynb)
 ---> 
 ### Links to Day 1 material (July 22)
+- [Course overview](https://docs.google.com/presentation/d/10GP9KN9lSPNQNWlHKEpZItidjhj8T4VLckDot2EJI6g/edit?usp=sharing)
 <!---
 - [Intro slides](https://docs.google.com/presentation/d/1m78B0lSyZFZ5Up2ssi_RcxVYxjOzHLCq8CnIROTIEEU/edit?usp=sharing)
 - [Linear regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_slides.pdf)
