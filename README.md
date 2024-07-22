@@ -24,6 +24,7 @@ Structure and course material
 - [Linear regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression.pdf)
 - 
 ### Links to Day 2 material (July 23)
+- [Data for exercises on linear regression}(https://github.com/heckelei/AFEPA2024/blob/main/dat_reg_logit.RData)
 <!---
 - [Logistic regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression_slides.pdf)
 - [Logistic regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression.pdf)
