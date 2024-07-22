@@ -22,14 +22,14 @@ Structure and course material
 - [Intro R-file with first exercises](https://github.com/heckelei/AFEPA2024/blob/main/Intro_Bayes_with_sampling.R)
 - [Linear regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_slides.pdf)
 - [Linear regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression.pdf)
+### Links to Day 2 material (July 23)
 - [Data for class slides on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/data_linear_regression.RData)
 - [R-file for class on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_handout.R)
 - [R-file with auxiliary functions for class on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/aux_functions.R)
-### Links to Day 2 material (July 23)
-- [Data for exercises on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/dat_reg_logit.RData)
 - [Stan program for prior simulation - Lin. Reg.](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_prior.stan)
 - [Stan program for estimation - Lin. Reg.](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression.stan)
 <!---
+- [Data for exercises on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/dat_reg_logit.RData)
 - [Logistic regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression_slides.pdf)
 - [Logistic regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression.pdf)
 ---> 
