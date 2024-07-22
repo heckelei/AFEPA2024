@@ -18,11 +18,10 @@ Structure and course material
 ---> 
 ### Links to Day 1 material (July 22)
 - [Organizational overview](https://docs.google.com/presentation/d/10GP9KN9lSPNQNWlHKEpZItidjhj8T4VLckDot2EJI6g/edit?usp=sharing)
-<!---
 - [Intro slides](https://docs.google.com/presentation/d/1m78B0lSyZFZ5Up2ssi_RcxVYxjOzHLCq8CnIROTIEEU/edit?usp=sharing)
 - [Linear regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_slides.pdf)
 - [Linear regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression.pdf)
----> 
+- 
 ### Links to Day 2 material (July 23)
 <!---
 - [Logistic regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression_slides.pdf)
