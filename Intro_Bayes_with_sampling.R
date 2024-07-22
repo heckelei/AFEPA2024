@@ -45,7 +45,7 @@ pot_outcomes
 
 # Now suppose we observe (0,1,1). What is the probability to observe this
 # for different shares of blood type A+ in the population? 
-# It is p*yi^N1 * (1-p)(1-yi)^(N-N1), so we get for our observation
+# It is p^N1 * (1-p)^(N-N1), so we get for our observation
 # p^2*(1-p) (we have to call p "x" for the following function)
 
 curve(x^2*(1-x)^1, from=0, to=1)
