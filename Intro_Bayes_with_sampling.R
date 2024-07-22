@@ -59,8 +59,8 @@ curve(x^2*(1-x)^1, from=0, to=1)
 # proper distribution by multiplying it with a constant such that the area
 # under the curve is equal to 1.
 # If we have a uniform prior U(p)=1, then the posterior post(p) is a 
-# beta distribution with parameters alpha=N+1 and beta=N-N1+1. 
-# So we get Beta(4,2) for our case of N=3 and N1=2 when observing (0,1,1). 
+# beta distribution with parameters alpha=N1+1 and beta=N-N1+1. 
+# So we get Beta(3,2) for our case of N=3 and N1=2 when observing (0,1,1). 
 # Note that the posterior would be the same if we observed (1,1,0) or (1,0,1).
 
 pos_samp <- rbeta(100000, 3, 2)                              
