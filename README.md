@@ -22,7 +22,8 @@ Structure and course material
 - [Intro R-file with first exercises](https://github.com/heckelei/AFEPA2024/blob/main/Intro_Bayes_with_sampling.R)
 - [Linear regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_slides.pdf)
 - [Linear regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression.pdf)
-- [Data for class slides on linear regression}(https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/data_linear_regression.RData) 
+- [Data for class slides on linear regression}(https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/data_linear_regression.RData)
+- [R-file for class on linear regression}(https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_handout.R)
 ### Links to Day 2 material (July 23)
 - [Data for exercises on linear regression}(https://github.com/heckelei/AFEPA2024/blob/main/dat_reg_logit.RData)
 <!---
