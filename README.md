@@ -28,8 +28,8 @@ Structure and course material
 - [R-file with auxiliary functions for class on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/aux_functions.R)
 - [Stan program for prior simulation - Lin. Reg.](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_prior.stan)
 - [Stan program for estimation - Lin. Reg.](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression.stan)
-<!---
 - [Data for exercises on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/dat_reg_logit.RData)
+<!---
 - [Logistic regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression_slides.pdf)
 - [Logistic regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression.pdf)
 ---> 
