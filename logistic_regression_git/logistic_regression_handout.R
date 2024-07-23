@@ -1,5 +1,5 @@
 
-setwd("your wd")
+setwd("~/Library/CloudStorage/OneDrive-UniversitàCattolicadelSacroCuore/1_Lavoro_personale/2024/AFEPA_Summer_School/logistic_regression_git/")
 
 source("aux_functions.R")
 
@@ -48,7 +48,7 @@ dat_list <- list(
   sigma_b1 = 5,
   sigma_b2 = 5,
   mu_alpha = 0,
-  sigma_alpha = 1.5
+  sigma_alpha = 1
 )
 
 rstan_options(auto_write = TRUE)
@@ -60,7 +60,7 @@ prior_sample <- sampling(logi_reg_prior,
                          data = dat_list,
                          algorithm = "Fixed_param")
 
-prior_sample_fit <- extract(prior_sample)
+prior_sample_fit <- rstan::extract(prior_sample)
 prior_sample_fit_pi <- prior_sample %>% spread_draws(prob[condition])
 
 prior_sample_fit_pi %>%
@@ -87,16 +87,16 @@ prior_sample_fit_pi %>%
   theme(aspect.ratio = 1,
         panel.grid = element_blank())
 
-# Start with beta1=beta2 ~ N(0,5)
+# Cange to beta1=beta2 ~ N(0,2)
 
-dat_list$sigma_b1 <- 5
-dat_list$sigma_b2 <- 5
+dat_list$sigma_b1 <- 2
+dat_list$sigma_b2 <- 2
 
 prior_sample <- sampling(logi_reg_prior,
                          data = dat_list,
                          algorithm = "Fixed_param")
 
-prior_sample_fit <- extract(prior_sample)
+prior_sample_fit <- rstan::extract(prior_sample)
 prior_sample_fit_pi <- prior_sample %>% spread_draws(prob[condition])
 
 prior_sample_fit_pi %>%
@@ -191,7 +191,7 @@ prior_sample <- sampling(logi_reg_prior,
                          data = dat_list,
                          algorithm = "Fixed_param")
 
-prior_sample_fit <- extract(prior_sample)
+prior_sample_fit <- rstan::extract(prior_sample)
 prior_sample_fit_pi <- prior_sample %>% spread_draws(prob[condition])
 
 prior_sample_fit_pi %>%
@@ -234,10 +234,10 @@ fit <- sampling(logi_reg,
                 chains = 4,
                 cores = 4)
 
-sample_fit <- extract(fit)
+sample_fit <- rstan::extract(fit)
 sample_fit_pi <- fit %>% spread_draws(prob[condition])
 
-### Visualize posteriors
+### Visualize posteriors and compute Credible Intervals
 
 # https://stats.stackexchange.com/questions/103951/intercept-from-standardized-coefficients-in-logistic-regression
 
@@ -247,9 +247,9 @@ beta2 <- sample_fit$beta2 * (0.5/sd(x2))
 
 summary(glm(y ~ x1 + x2, family = binomial(link = "logit")))
 
-mean(alpha); hdi(alpha)
-mean(beta1); hdi(beta1)
-mean(beta2); hdi(beta2)
+mean(alpha); quantile(alpha, c(.025, .975))
+mean(beta1); quantile(beta1, c(.025, .975))
+mean(beta2); quantile(beta2, c(.025, .975))
 
 par(mfrow=c(1,3), pty="s")
 hist(alpha, main = "alpha", xlab = "draws")
@@ -269,12 +269,6 @@ par(pty="s")
 plot(h_data, col = c("white", "lightblue")[h_area], main = "beta1", 
      xlab = paste0("Pr(beta2 > ", thr, " | y, x1, x2) = ", round(prob, 2)))
 par(pty="m")
-
-### Compute credible intervals
-
-rbind(quantile(alpha, c(.025, .975)),
-      quantile(beta1, c(.025, .975)),
-      quantile(beta2, c(.025, .975)))
 
 ### Posterior Predictive Distribution
 
