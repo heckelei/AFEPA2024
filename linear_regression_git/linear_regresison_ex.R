@@ -5,11 +5,12 @@ source("aux_functions.R")
 
 library(rstan)
 library(truncnorm)
+library(dplyr)
 
 ### Load data
 #############
 
-load("data_linear_regression_ex.RData")
+load("dat_reg_logit.RData")
 
 ### Load the Stan files
 #######################
@@ -24,12 +25,14 @@ lin_reg_prior <- stan_model("linear_regression_prior_X.stan")
 
 # put dependent variable into a vector called y
 
-y <- 
+y <- dat_reg_logit$Net_Farm_Income
 
 # put matrix of independent variables into a matrix called X. This must be a matrix,
 # NOT a data.frame or tibble object!
   
-X <- 
+X <- dat_reg_logit %>%
+  select(-Net_Farm_Income) %>%
+  as.matrix()
   
 ### Prior Predictive checks
 ###########################
@@ -68,10 +71,15 @@ hist(sd_y, main = "sd", xlab = "draws")
 abline(v=sd(y),col="green", lwd=2)
 par(mfrow=c(1,1), pty="m")
 
+### Standardized variables
+
+y_std <- as.vector(scale(y))
+X_std <- apply(X, 2, scale)
+
 ### Estimation
 ##############
 
-fit <- fit <- sampling(lin_reg,
-                       data = dat_list,
-                       chains = 4,
-                       cores = 4)
+fit <- sampling(lin_reg,
+                data = dat_list,
+                chains = 4,
+                cores = 4)
