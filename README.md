@@ -28,6 +28,7 @@ Structure and course material
 - [R-file with auxiliary functions for class on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/aux_functions.R)
 - [Stan program for prior simulation - Lin. Reg.](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_prior.stan)
 - [Stan program for estimation - Lin. Reg.](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression.stan)
+- [R-file for starting the exercise on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regresison_ex.R)
 #### Excercises:
 - [Stan program for prior simulation - Lin. Reg., Full X](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_prior_X.stan)
 - [Stan program for estimation - Lin. Reg., Full X](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_X.stan)
