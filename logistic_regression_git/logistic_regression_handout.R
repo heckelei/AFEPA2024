@@ -1,7 +1,5 @@
 
-setwd("~/Library/CloudStorage/OneDrive-UniversitàCattolicadelSacroCuore/1_Lavoro_personale/2024/AFEPA_Summer_School/logistic_regression_git/")
-
-source("aux_functions.R")
+setwd("your wd")
 
 library(rstan)
 library(tidybayes)
