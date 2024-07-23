@@ -33,6 +33,7 @@ Structure and course material
 - [Stan program for prior simulation - Lin. Reg., Full X](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_prior_X.stan)
 - [Stan program for estimation - Lin. Reg., Full X](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_X.stan)
 - [Data for exercises on linear regression](https://github.com/heckelei/AFEPA2024/blob/main/dat_reg_logit.RData)
+- [R file for exercses](https://github.com/heckelei/AFEPA2024/blob/main/linear_regression_git/linear_regression_ex.R)
 <!---
 - [Logistic regression case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression_slides.pdf)
 - [Logistic regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression.pdf)
