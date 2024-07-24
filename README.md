@@ -53,4 +53,4 @@ Structure and course material
 - [STAN file prior2](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_prior_2.stan)
 - [STAN file prior3](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_prior_3.stan)
 - [STAN file prior4](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_prior_4.stan)
-- [STAN file panel estimation]
+- [STAN file panel estimation](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression.stan)
