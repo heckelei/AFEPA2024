@@ -48,3 +48,4 @@ Structure and course material
 - [Panel data case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_slides.pdf)
 - [Panel data case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression.pdf)
 - [R-file for Panel data case study](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_handout.R)
+- [Data file for panel estimation](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/panel_fadn.csv)
