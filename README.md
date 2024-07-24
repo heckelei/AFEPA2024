@@ -50,7 +50,7 @@ Structure and course material
 - [R-file for Panel data case study](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_handout.R)
 - [Data file for panel estimation](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/panel_fadn.csv)
 - [STAN file prior1](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_prior_1.stan)
-- [STAN file prior2]
-- [STAN file prior3]
-- [STAN file prior4]
+- [STAN file prior2](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_prior_2.stan)
+- [STAN file prior3](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_prior_3.stan)
+- [STAN file prior4](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_prior_4.stan)
 - [STAN file panel estimation]
