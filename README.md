@@ -42,6 +42,7 @@ Structure and course material
 - [Logistic regression case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression.pdf)
 - [R-file for class on logistic regression](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression_handout.R)
 - [Data for class slides on logistic regression](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/data_logistic_regression.RData)
+- [Stan file for logistic regression](https://github.com/heckelei/AFEPA2024/blob/main/logistic_regression_git/logistic_regression.stan)
 <!---
 - [Panel data case study - Slides](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression_slides.pdf)
 - [Panel data case study - Markdown](https://github.com/heckelei/AFEPA2024/blob/main/panel_data_git/chamberlain_regression.pdf)
