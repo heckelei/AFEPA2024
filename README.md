@@ -1,9 +1,9 @@
 # AFEPA summer school in Bonn, Germany, July 22 to 26, 2024
-## July 22 to 24: Introduction to Probabilistic Programming: Concept and exemplary application;
+
 ## July 25 to 26: Oxford Style Debate on policy topics
 - [Instructions for Oxford Style Debate](https://github.com/heckelei/AFEPA2024/blob/main/Oxford-Style%20Debate%20Instructions%20AFEPA%20summer%20school_final.pdf)
 
-
+## July 22 to 24: Introduction to Probabilistic Programming: Concept and exemplary application
 ### Instructors (July 22 - 24)
 [Thomas Heckelei - University of Bonn, Germany](https://www.ilr1.uni-bonn.de/en/research/research-groups/economic_and_agricultural-policy/prof)  
 
